@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <!-- COD and RLAP Office -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.CODRLAPOffice</string>
+      <key>PayloadUUID</key>
+      <string>57b79d03-40bd-48ef-ad82-7602bc58a032</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>COD and RLAP Office</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2028</string>
+    </dict>
+
+    <!-- COD Office -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.CODOffice</string>
+      <key>PayloadUUID</key>
+      <string>1e2f3a4b-5678-490a-bcde-1234567890aa</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>COD office</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>b5iiH*m.U6w4lT)1</string>
+    </dict>
+
+    <!-- MGT-Maadi -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.MGTMaadi</string>
+      <key>PayloadUUID</key>
+      <string>2b3c4d5e-6789-401a-bcde-1234567890bb</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>MGT-Maadi</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2019</string>
+    </dict>
+
+    <!-- StARS 5G -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.StARS_5G</string>
+      <key>PayloadUUID</key>
+      <string>2b3c4d5e-6789-401a-bcde-1234567980bb</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>StARS 5G</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2022</string>
+    </dict>
+
+    <!-- StARS 2 5G -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.StARS_2_5G</string>
+      <key>PayloadUUID</key>
+      <string>2b3c4d5e-6789-401a-bcde-1234567980bbb</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>StARS 2 5G</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2021</string>
+    </dict>
+
+
+    <!-- Maadi Roof 5G -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.MaadiRoof5G</string>
+      <key>PayloadUUID</key>
+      <string>3c4d5e6f-7890-412a-bcde-1234567890cc</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Maadi_Roof 5G</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2026</string>
+    </dict>
+
+    <!-- Maadi Office 2.4 -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.MaadiOffice24</string>
+      <key>PayloadUUID</key>
+      <string>c6e91b54-88c7-4c86-8ff1-72667b123031</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Maadi Office 2.4</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2031</string>
+    </dict>
+
+    <!-- Maadi Office 5G -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.MaadiOffice5G</string>
+      <key>PayloadUUID</key>
+      <string>f52d8b7f-8a62-46ff-9a15-29b02b2035f1</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Maadi Office 5G</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2031</string>
+    </dict>
+
+    <!-- Maadi StARS 5G -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.MaadiStARS5G</string>
+      <key>PayloadUUID</key>
+      <string>36c12d51-8d71-4b6d-b1ff-f5fd93897e47</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Maadi StARS 5G</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>b5iiH*m.U6w4lT)1</string>
+    </dict>
+
+    <!-- Maadi StARS -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.MaadiStARS</string>
+      <key>PayloadUUID</key>
+      <string>276f2c65-7023-4cd0-9815-101c75f45a03</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Maadi StARS</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>b5iiH*m.U6w4lT)1</string>
+    </dict>
+
+    <!-- Maadi Roof 2.4 -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.MaadiRoof24</string>
+      <key>PayloadUUID</key>
+      <string>87223b6e-da3d-4ca4-affb-3b837e0f61c5</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Maadi_Roof 2.4</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2026</string>
+    </dict>
+
+    <!-- Orange-Maadi Office 2 -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.OrangeMaadiOffice2</string>
+      <key>PayloadUUID</key>
+      <string>55e7e692-b10c-4bb2-acdb-f915caa5d041</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Orange-Maadi Office 2</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2029</string>
+    </dict>
+
+    <!-- Preschool -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.Preschool</string>
+      <key>PayloadUUID</key>
+      <string>4216d700-6a71-4dfb-8f13-5f51742d0aab</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Preschool</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2027</string>
+    </dict>
+
+    <!-- RLAP Office 2,4GHz -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.RLAPOffice24</string>
+      <key>PayloadUUID</key>
+      <string>5a801504-492f-4281-bd80-1d9c0f7dfd1a</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>RLAP Office 2,4GHz</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2033</string>
+    </dict>
+
+    <!-- RLAP Office 5GHz -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.RLAPOffice5G</string>
+      <key>PayloadUUID</key>
+      <string>052a9b8c-963f-44f5-91d9-f6f0be95f05e</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>RLAP Office 5GHz</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>M@@di@2033</string>
+    </dict>
+
+    <!-- Teacher's Office (Maadi) -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.TeachersOfficeMaadi</string>
+      <key>PayloadUUID</key>
+      <string>747b8895-7f3e-4739-ae70-0286e4957ff4</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Teacher's Office (Maadi)</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>b5iiH*m.U6w4lT)1</string>
+    </dict>
+
+    <!-- Teacher's Office 5G (Maadi) -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.wifi.managed</string>
+      <key>PayloadIdentifier</key>
+      <string>com.example.wifi.TeachersOffice5GMaadi</string>
+      <key>PayloadUUID</key>
+      <string>223bca57-8aa8-4441-94f4-5420dc37d47c</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>SSID_STR</key>
+      <string>Teacher's Office 5G (Maadi)</string>
+      <key>AutoJoin</key>
+      <true/>
+      <key>EncryptionType</key>
+      <string>WPA2</string>
+      <key>Password</key>
+      <string>b5iiH*m.U6w4lT)1</string>
+    </dict>
+  </array>
+
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+  <key>PayloadIdentifier</key>
+  <string>com.example.config.AllNetworks17</string>
+  <key>PayloadUUID</key>
+  <string>e9f7b9b0-9a59-4d0a-9bba-5dba8cc01531</string>
+  <key>PayloadDisplayName</key>
+  <string>Wi-Fi Configuration (17 Networks, no COD 5G)</string>
+</dict>
+</plist>
