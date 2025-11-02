@@ -7,23 +7,16 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      text-align: center;
       margin: 0;
       padding: 0;
-      text-align: center;
-
-      /* Background image */
-      background-image: url('us.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-color: #fff;
     }
 
     .container {
       max-width: 600px;
       margin: 50px auto;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8); /* makes text readable */
-      border-radius: 10px;
     }
 
     h1 {
@@ -44,8 +37,9 @@
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      margin: 20px 0;
+      margin: 20px 10px;
       font-weight: bold;
+      cursor: pointer;
     }
 
     a.button:hover {
@@ -69,12 +63,17 @@
 <body>
   <div class="container">
     <h1>Connect to Maadi WiFi</h1>
-    <p>Scan the QR code below or tap the button to download the WiFi configuration for your device.</p>
+    <p>Scan the QR code below or tap the buttons to download or scan the WiFi configuration for your device.</p>
+
+    <!-- Download button -->
     <a href="AllWiFi.mobileconfig" class="button">Download WiFi Configuration</a>
-    <p>Or scan this on your iPhone / Mac camera:</p>
-    <a href="AllWiFi.mobileconfig">
-      <img src="qr.png" alt="QR code to join Maadi WiFi">
-    </a>
+
+    <!-- Scan button (looks same as download) -->
+    <a href="qr.png" class="button">Scan QR Code</a>
+
+    <p>Or scan the QR code on your iPhone / Mac camera:</p>
+    <img src="qr.png" alt="QR code to join Maadi WiFi">
+
     <p class="instructions">
       If you’re on Mac: after download open the file → System Settings → Profiles → Install.<br>
       On iPhone: tap the file, go to Settings → Profile and install.<br>
