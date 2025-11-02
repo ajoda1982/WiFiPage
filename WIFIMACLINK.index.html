@@ -10,13 +10,18 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      background-color: #fff;
+      background-image: url('us.png'); /* make sure us.png is in the same folder */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .container {
       max-width: 600px;
       margin: 50px auto;
       padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* semi-transparent for readability */
+      border-radius: 10px;
     }
 
     h1 {
@@ -37,9 +42,8 @@
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      margin: 20px 10px;
+      margin: 20px 0;
       font-weight: bold;
-      cursor: pointer;
     }
 
     a.button:hover {
@@ -63,18 +67,13 @@
 <body>
   <div class="container">
     <h1>Connect to Maadi WiFi</h1>
-    <p>Scan the QR code below or tap the buttons to download or scan the WiFi configuration for your device.</p>
+    <p>Scan the QR code below or tap the button to download the WiFi configuration for your device.</p>
 
     <!-- Download button -->
     <a href="AllWiFi.mobileconfig" class="button">Download WiFi Configuration</a>
 
-    <!-- Scan button (looks same as download) -->
-    <a href="qr.png" class="button">Scan QR Code</a>
-
-    <!-- Optional text button version -->
-    <p>
-      <a href="qr.png" class="button">Or scan this on your iPhone / Mac camera</a>
-    </p>
+    <!-- Plain text above QR code -->
+    <p>Or scan this on your iPhone / Mac camera:</p>
 
     <!-- QR code displayed below for direct scanning -->
     <img src="qr.png" alt="QR code to join Maadi WiFi">
