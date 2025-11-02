@@ -2,25 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
-  <title>Join Maadi WiFi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect to Maadi WiFi</title>
   <style>
-    body { font‑family: sans‑serif; max‑width: 600px; margin: 50px auto; text‑align: center; }
-    img { width: 200px; height: auto; margin: 20px 0; }
-    a.button { display:inline-block; padding:12px 24px; background‑color:#0066CC; colour:#fff; text‑decoration:none; border‑radius:4px; }
-    a.button:hover { background‑color:#0055AA; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #0066CC;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    a.button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #0066CC;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #0055AA;
+    }
+    img {
+      width: 200px;
+      height: auto;
+      margin: 20px 0;
+      border: 2px solid #0066CC;
+      border-radius: 10px;
+    }
+    .instructions {
+      font-size: 14px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
-  <h1>Connect to Maadi WiFi</h1>
-  <p>Scan the QR code below or tap the button to download the WiFi configuration for your device.</p>
-  <a href="AllWiFi.mobileconfig" class="button">Download WiFi Configuration</a>
-  <p>Or scan this on your iPhone / Mac camera:</p>
-  <a href="AllWiFi.mobileconfig">
-    <img src="qr.png" alt="QR code to join Maadi WiFi">
-  </a>
-  <p>If you’re on Mac: after download open the file → System Settings → Profiles → Install.<br>
-     On iPhone: tap the file, go to Settings → Profile and install.<br>
-     For help contact: support@example.org</p>
+  <div class="container">
+    <h1>Connect to Maadi WiFi</h1>
+    <p>Scan the QR code below or tap the button to download the WiFi configuration for your device.</p>
+    <a href="AllWiFi.mobileconfig" class="button">Download WiFi Configuration</a>
+    <p>Or scan this on your iPhone / Mac camera:</p>
+    <a href="AllWiFi.mobileconfig">
+      <img src="qr.png" alt="QR code to join Maadi WiFi">
+    </a>
+    <p class="instructions">
+      If you’re on Mac: after download open the file → System Settings → Profiles → Install.<br>
+      On iPhone: tap the file, go to Settings → Profile and install.<br>
+      For help contact: support@example.org
+    </p>
+  </div>
 </body>
 </html>
