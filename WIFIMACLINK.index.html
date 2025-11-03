@@ -1,94 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connect to Maadi WiFi</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Connect to Maadi Wi‑Fi</title>
 <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('us.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  .container {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 40px 30px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 500px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  }
-
-  h1 {
-    color: #0066CC;
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  a.button {
-    display: inline-block;
-    margin: 20px 10px 10px;
-    padding: 15px 30px;
-    background-color: #0066CC;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s;
-  }
-
-  a.button:hover {
-    background-color: #0055AA;
-  }
-
-  img.qr {
-    width: 220px;
-    max-width: 80%;
-    margin: 20px auto;
-    border: 3px solid #0066CC;
-    border-radius: 15px;
-    display: block;
-  }
-
-  .instructions {
-    font-size: 14px;
-    color: #555;
-    margin-top: 20px;
-  }
+  :root{--blue:#0066CC;--blue-dark:#0055AA}
+  body{ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; margin:0; min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background: #f3f6fb url('us.png') center/cover no-repeat;}
+  .card{ max-width:520px; width:94%; background:rgba(255,255,255,0.98);
+    padding:28px; border-radius:12px; box-shadow:0 8px 22px rgba(0,0,0,0.12); text-align:center;}
+  h1{color:var(--blue); margin:0 0 8px; font-size:1.6rem;}
+  p.lead{color:#333; margin:8px 0 18px; line-height:1.4}
+  img.qr{width:200px; max-width:70%; border:3px solid var(--blue); border-radius:12px; cursor:pointer; display:block; margin:0 auto}
+  .pw-row{margin-top:16px; display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap}
+  .pw-box{padding:10px 12px; border-radius:8px; border:1px solid #d0d7e0; font-size:16px; min-width:180px; text-align:center; background:#fafafa}
+  .btn{padding:10px 14px; border-radius:8px; border:0; background:var(--blue); color:#fff; font-weight:600; cursor:pointer}
+  .btn.secondary{background:#eeeeee; color:#222; box-shadow:none}
+  .note{font-size:13px;color:#555;margin-top:14px}
+  .warn{color:#a00;font-size:13px;margin-top:8px}
+  a.download{display:inline-block;margin-top:14px;padding:12px 18px;border-radius:10px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700}
+  @media (max-width:420px){ .pw-box{min-width:140px} }
 </style>
 </head>
 <body>
+  <div class="card" role="main" aria-labelledby="title">
+    <h1 id="title">Connect to Maadi Wi‑Fi</h1>
+    <p class="lead">Tap the download button or scan the QR code. If you scanned the QR, this page will show the IT password below — tap <strong>Reveal</strong> to view it.</p>
 
-<div class="container">
-  <h1>Connect to Maadi WiFi</h1>
-  <p>Tap the button or scan the QR code to download the Wi-Fi profile.</p>
+    <!-- QR: IMPORTANT: the QR must encode the URL of this page (not the .mobileconfig file) -->
+    <img id="qrImg" class="qr" src="qr.png" alt="QR code to open this page (scan with your phone camera)">
 
-  <a href="AllWiFi.mobileconfig" class="button">Download Wi-Fi Configuration</a>
+    <a class="download" href="AllWiFi.mobileconfig">Download Wi‑Fi Configuration</a>
 
-  <p>Or scan this on your iPhone / Mac camera:</p>
-  <a href="AllWiFi.mobileconfig">
-    <img src="qr.png" alt="QR code to install Wi-Fi profile" class="qr">
-  </a>
+    <div class="pw-row" style="margin-top:18px;">
+      <div id="pwBox" class="pw-box">••••••••••</div>
+      <button id="revealBtn" class="btn secondary">Reveal</button>
+      <button id="copyBtn" class="btn">Copy</button>
+    </div>
 
-  <p class="instructions">
-    For help contact: <a href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a>
-  </p>
-</div>
+    <div class="note">For help contact: <a href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a></div>
+    <div class="warn">Note: anyone who opens this page can reveal and copy the password. Regenerate QR to point to this page URL.</div>
+  </div>
 
+<script>
+  // === CONFIGURE PASSWORD HERE ===
+  const IT_PASSWORD = "admin2k22"; // set your IT password
+  // ==============================
+
+  const pwBox = document.getElementById('pwBox');
+  const revealBtn = document.getElementById('revealBtn');
+  const copyBtn = document.getElementById('copyBtn');
+  const qrImg = document.getElementById('qrImg');
+
+  let revealed = false;
+
+  // reveal / hide toggle
+  revealBtn.addEventListener('click', () => {
+    revealed = !revealed;
+    if (revealed) {
+      pwBox.textContent = IT_PASSWORD;
+      revealBtn.textContent = 'Hide';
+      // optionally focus copy for mobile UX
+      copyBtn.focus();
+    } else {
+      pwBox.textContent = '••••••••••';
+      revealBtn.textContent = 'Reveal';
+    }
+  });
+
+  // copy to clipboard
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(IT_PASSWORD);
+      copyBtn.textContent = 'Copied';
+      setTimeout(()=> copyBtn.textContent = 'Copy', 1500);
+    } catch (e) {
+      // fallback: select and prompt
+      const range = document.createRange();
+      range.selectNodeContents(pwBox);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      try { document.execCommand('copy'); copyBtn.textContent = 'Copied'; setTimeout(()=> copyBtn.textContent = 'Copy',1500); } catch(e){ alert('Copy failed — select and copy manually.'); }
+      window.getSelection().removeAllRanges();
+    }
+  });
+
+  // UX: when user taps the QR image (mobile browsers) focus reveal button
+  qrImg.addEventListener('click', () => {
+    // show small prompt on tap to guide mobile users
+    if (!revealed) {
+      if (confirm('Open the password area now to reveal the IT password?')) {
+        revealBtn.click();
+      }
+    } else {
+      // already revealed -> do nothing or highlight
+      pwBox.style.transition = 'background .15s';
+      pwBox.style.background = '#fffecb';
+      setTimeout(()=> pwBox.style.background = '#fafafa', 220);
+    }
+  });
+
+  // Accessibility: allow Enter key on reveal button when focused
+  revealBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter') revealBtn.click(); });
+  copyBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter') copyBtn.click(); });
+
+  // Optional: auto-reveal for trusted devices (uncomment if desired)
+  // if (navigator.userAgent && /iPhone|iPad|Android/i.test(navigator.userAgent)) {
+  //   // auto-reveal on mobile: pwBox.textContent = IT_PASSWORD;
+  // }
+</script>
 </body>
 </html>
