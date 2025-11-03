@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Connect to Maadi WiFi</title>
 <style>
-  /* Global Styles */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('us.png'); /* Background image */
+    background-image: url('us.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +19,6 @@
     min-height: 100vh;
   }
 
-  /* Main Container */
   .container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 40px 30px;
@@ -30,21 +28,18 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   }
 
-  /* Heading */
   h1 {
     color: #0066CC;
     font-size: 2em;
     margin-bottom: 20px;
   }
 
-  /* Paragraphs */
   p {
     font-size: 16px;
     color: #333;
     line-height: 1.6;
   }
 
-  /* Download Button */
   a.button {
     display: inline-block;
     margin: 20px 10px 10px;
@@ -61,7 +56,6 @@
     background-color: #0055AA;
   }
 
-  /* QR Image */
   img.qr {
     width: 220px;
     max-width: 80%;
@@ -70,20 +64,10 @@
     border-radius: 15px;
   }
 
-  /* Instructions */
   .instructions {
     font-size: 14px;
     color: #555;
     margin-top: 20px;
-  }
-
-  a.mail {
-    color: #0066CC;
-    text-decoration: none;
-  }
-
-  a.mail:hover {
-    text-decoration: underline;
   }
 </style>
 </head>
@@ -91,23 +75,29 @@
 
 <div class="container">
   <h1>Connect to Maadi WiFi</h1>
-  <p>Tap the button to download the WiFi configuration for your device.</p>
+  <p>Tap the button to download and install the WiFi configuration for your device.</p>
 
-  <!-- Download ZIP Button -->
-  <a href="AllWiFi.zip" class="button">Download WiFi Configuration (ZIP)</a>
+  <!-- iPhone (Profile Install) -->
+  <a href="https://cdn.jsdelivr.net/gh/ajoda1982/WiFiPage/AllWiFi.mobileconfig" class="button">
+    Install Wi-Fi Profile (iPhone)
+  </a>
+
+  <!-- Mac (ZIP Download) -->
+  <a href="AllWiFi.zip" class="button">
+    Download Wi-Fi Configuration (ZIP)
+  </a>
 
   <p>Or scan this on your iPhone / Mac camera:</p>
 
-  <!-- QR Code linked to the ZIP file -->
-  <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.zip">
-    <img src="qr.png" alt="QR code to download WiFi ZIP" class="qr">
+  <!-- QR Code -->
+  <a href="https://cdn.jsdelivr.net/gh/ajoda1982/WiFiPage/AllWiFi.mobileconfig">
+    <img src="qr.png" alt="QR code to install Wi-Fi profile" class="qr">
   </a>
 
   <p class="instructions">
-    📘 <strong>Installation help:</strong><br>
-    • On <b>Mac</b>: open the ZIP → extract → double-click the WiFi profile → System Settings → Profiles → Install.<br>
-    • On <b>iPhone</b>: open the ZIP in Files app → tap the WiFi profile inside → Install.<br><br>
-    For support: <a href="mailto:ajoda@stars-egypt.org" class="mail">ajoda@stars-egypt.org</a>
+    <strong>For iPhone:</strong> scan the code or tap the first button → install the Wi-Fi profile in Settings.<br>
+    <strong>For Mac:</strong> download the ZIP → open and double-click the Wi-Fi profile → System Settings → Profiles → Install.<br>
+    For help contact: <a href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a>
   </p>
 </div>
 
