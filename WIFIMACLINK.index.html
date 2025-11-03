@@ -12,16 +12,20 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('us.png') center/cover no-repeat;
+    background: #f2f8ff;
   }
   .container {
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.97);
     padding: 40px 30px;
-    border-radius: 16px;
-    max-width: 500px;
+    border-radius: 20px;
+    max-width: 520px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+  .illustration {
+    width: 120px;
+    margin: 0 auto 20px;
   }
   h1 {
     color: #0066CC;
@@ -36,8 +40,8 @@
   }
   a.button {
     padding: 14px 28px;
-    border-radius: 12px;
-    background: #0066CC;
+    border-radius: 16px;
+    background: #00AEEF;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -45,15 +49,15 @@
     transition: background 0.3s, transform 0.2s;
   }
   a.button:hover {
-    background: #0055AA;
+    background: #007bb5;
     transform: scale(1.03);
   }
   img.qr {
-    width: 220px;
+    width: 200px;
     max-width: 80%;
     margin: 0 auto 20px;
-    border: 3px solid #0066CC;
-    border-radius: 12px;
+    border-radius: 16px;
+    border: 3px solid #00AEEF;
     display: block;
   }
   .contact {
@@ -67,6 +71,7 @@
 </head>
 <body>
 <div class="container">
+  <img src="illustration.png" alt="Illustration" class="illustration">
   <h1>Connect to Maadi WiFi</h1>
   <div class="buttons">
     <a href="AllWiFi.mobileconfig" class="button">Install Wi‑Fi Profile (iPhone/iPad)</a>
