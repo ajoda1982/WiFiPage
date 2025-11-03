@@ -10,7 +10,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('us.png'); /* background image */
+    background-image: url('us.png'); /* Background image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@
     min-height: 100vh;
   }
 
-  /* Container */
+  /* Main Container */
   .container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 40px 30px;
@@ -37,14 +37,14 @@
     margin-bottom: 20px;
   }
 
-  /* Paragraph */
+  /* Paragraphs */
   p {
     font-size: 16px;
     color: #333;
     line-height: 1.6;
   }
 
-  /* Button */
+  /* Download Button */
   a.button {
     display: inline-block;
     margin: 20px 10px 10px;
@@ -61,7 +61,7 @@
     background-color: #0055AA;
   }
 
-  /* QR Code */
+  /* QR Image */
   img.qr {
     width: 220px;
     max-width: 80%;
@@ -76,6 +76,15 @@
     color: #555;
     margin-top: 20px;
   }
+
+  a.mail {
+    color: #0066CC;
+    text-decoration: none;
+  }
+
+  a.mail:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
@@ -84,20 +93,21 @@
   <h1>Connect to Maadi WiFi</h1>
   <p>Tap the button to download the WiFi configuration for your device.</p>
 
-  <!-- Download Button (ZIP) -->
+  <!-- Download ZIP Button -->
   <a href="AllWiFi.zip" class="button">Download WiFi Configuration (ZIP)</a>
 
   <p>Or scan this on your iPhone / Mac camera:</p>
 
-  <!-- QR Code linked to ZIP file -->
-  <a href="AllWiFi.zip">
+  <!-- QR Code linked to the ZIP file -->
+  <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.zip">
     <img src="qr.png" alt="QR code to download WiFi ZIP" class="qr">
   </a>
 
   <p class="instructions">
-    If you’re on Mac: after download open the ZIP file → extract → double click the WiFi profile → System Settings → Profiles → Install.<br>
-    On iPhone: open the ZIP file in Files app → tap the WiFi profile inside → install.<br>
-    For help contact: <a href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a>
+    📘 <strong>Installation help:</strong><br>
+    • On <b>Mac</b>: open the ZIP → extract → double-click the WiFi profile → System Settings → Profiles → Install.<br>
+    • On <b>iPhone</b>: open the ZIP in Files app → tap the WiFi profile inside → Install.<br><br>
+    For support: <a href="mailto:ajoda@stars-egypt.org" class="mail">ajoda@stars-egypt.org</a>
   </p>
 </div>
 
