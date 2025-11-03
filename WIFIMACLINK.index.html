@@ -1,111 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Maadi Wi‑Fi Profile</title>
-<style>
-  :root{--blue:#0066CC;--blue-dark:#0055AA}
-  body{
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin:0;min-height:100vh;
-    display:flex;align-items:center;justify-content:center;
-    background-image:url('us.png');
-    background-size:cover;background-position:center;
-  }
-  .container{
-    width:100%;max-width:520px;
-    background:rgba(255,255,255,0.96);
-    padding:34px;border-radius:14px;text-align:center;
-    box-shadow:0 10px 24px rgba(0,0,0,0.18);
-  }
-  h1{color:var(--blue);font-size:1.8rem;margin:0 0 12px;}
-  p{color:#333;line-height:1.5;margin:0 0 16px;}
-  .qr-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
-  img.qr{width:200px;max-width:78%;border:3px solid var(--blue);border-radius:12px;display:block;cursor:pointer}
-  input[type="password"]{
-    width:82%;padding:11px 12px;font-size:15px;border-radius:8px;border:1px solid #cfcfcf;
-    margin-top:8px;
-  }
-  button{
-    margin-top:12px;padding:11px 20px;font-size:15px;border-radius:8px;border:0;
-    background:var(--blue);color:#fff;cursor:pointer;font-weight:600;
-  }
-  button:hover{background:var(--blue-dark)}
-  .small{font-size:13px;color:#555;margin-top:14px}
-  .warn{color:#a00;font-size:13px;margin-top:10px}
-  a.mail{color:var(--blue)}
-  @media (max-width:420px){
-    input[type="password"]{width:92%}
-  }
-</style>
-</head>
-<body>
-  <div class="container" role="main" aria-labelledby="title">
-    <h1 id="title">Connect to Maadi Wi‑Fi</h1>
-    <p>Scan the QR or click the QR image, then enter the IT password below to download the Wi‑Fi profile.</p>
+<?php
+// wifi-download.php
+// Simple password-protect and serve file. Change $password to your chosen password.
+$password = 'admin2k22';
+$method = $_SERVER['REQUEST_METHOD'];
 
-    <div class="qr-wrap">
-      <!-- IMPORTANT: regenerate the QR so it encodes the URL of this page (e.g. https://yoursite.com/maadi-wifi.html) -->
-      <!-- If the QR currently encodes AllWiFi.mobileconfig, scanning will still download the file immediately. -->
-      <img id="qrImage" src="qr.png" alt="QR code — scan to open this password page" class="qr" onclick="onQrClick()" />
-      <div class="small">Tip: scan with your phone camera. If the scan opens the profile directly, the QR was encoded to the file — regenerate it to point to this page.</div>
-    </div>
-
-    <div style="margin-top:14px">
-      <input id="pw" type="password" autocomplete="current-password" placeholder="Enter IT password" aria-label="IT password">
-      <br />
-      <button id="downloadBtn" onclick="checkPassword()">Download Wi‑Fi Profile</button>
-    </div>
-
-    <p class="small">For help contact: <a class="mail" href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a></p>
-    <p class="warn">Security note: this client-side password protects convenience only. For real protection use a server-side authentication or password-protected ZIP.</p>
-  </div>
-
-<script>
-/*
-  Password: admin2k22
-  Stored below as Base64 to avoid plain-text in source at first glance.
-  This is obfuscation only — anyone can decode Base64 via browser dev tools.
-*/
-const encodedPassword = "YWRtaW4yazIy"; // Base64 of "admin2k22"
-const downloadFile = "AllWiFi.mobileconfig"; // update to absolute URL if needed
-
-function decodeBase64(s){ try { return atob(s); } catch(e){ return s; } }
-
-function checkPassword() {
-  const input = document.getElementById('pw').value || "";
-  const real = decodeBase64(encodedPassword);
-  if (input === real) {
-    // start download
-    // Use assign to keep navigation in same tab and trigger download/open
-    window.location.href = downloadFile;
-  } else {
-    // small UX: clear input (optional) and show message
-    document.getElementById('pw').value = "";
-    alert("Incorrect password. Contact IT at ajoda@stars-egypt.org if you need access.");
-  }
-}
-
-// When user clicks the QR image on desktop/mobile browser
-// trigger a short info or prompt so they can enter password on this page.
-// Note: QR *scanning* must target the URL of this page. Scanners don't run JS.
-function onQrClick() {
-  // mobile users tapping the QR image will be on this page already; just focus the password field.
-  document.getElementById('pw').focus();
-  // we also show a subtle reminder
-  setTimeout(()=>{ if (!document.getElementById('pw').value) {
-    // show prompt only if user hasn't filled password
-    // (using confirm so mobile users get a direct prompt option)
-    if (confirm("Enter IT password now to download the Wi‑Fi profile?")) {
-      // focus for typing
-      document.getElementById('pw').focus();
+if ($method === 'POST') {
+    $input = isset($_POST['pw']) ? $_POST['pw'] : '';
+    if ($input === $password) {
+        $file = __DIR__ . '/AllWiFi.mobileconfig';
+        if (!file_exists($file)) {
+            http_response_code(404);
+            echo "File not found.";
+            exit;
+        }
+        // Send appropriate headers for mobileconfig
+        header('Content-Type: application/x-apple-aspen-config');
+        header('Content-Disposition: attachment; filename="AllWiFi.mobileconfig"');
+        header('Content-Length: ' . filesize($file));
+        // Stream file
+        readfile($file);
+        exit;
+    } else {
+        http_response_code(403);
+        echo "Incorrect password.";
+        exit;
     }
-  }}, 250);
 }
 
-// Optional: prevent easy right-click -> view image if you want extra small deterrent
-document.getElementById('qrImage').addEventListener('contextmenu', function(e){ e.preventDefault(); });
-</script>
+// GET => show a simple HTML form to accept password
+?>
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wi‑Fi Download</title></head>
+<body style="font-family:Arial; text-align:center; padding:40px;">
+  <h1>Enter IT password</h1>
+  <form method="post" style="margin-top:18px;">
+    <input type="password" name="pw" placeholder="IT password" style="padding:10px; width:70%;"><br>
+    <button type="submit" style="margin-top:12px;padding:10px 18px;">Download</button>
+  </form>
+  <p style="margin-top:18px">Contact <a href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a> for help.</p>
 </body>
 </html>
