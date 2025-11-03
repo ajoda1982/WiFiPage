@@ -50,6 +50,7 @@
     font-weight: bold;
     border-radius: 8px;
     transition: 0.3s;
+    cursor: pointer;
   }
 
   a.button:hover {
@@ -75,13 +76,11 @@
 
 <div class="container">
   <h1>Connect to Maadi WiFi</h1>
-  <p>Tap the button to get the WiFi configuration file for your device.</p>
+  <p>Tap the button to get the Wi-Fi configuration file for your device. IT password is required.</p>
 
-  <a href="AllWiFi.mobileconfig" class="button">Install Wi-Fi Profile</a>
-  <a href="AllWiFi.zip" class="button">Download Wi-Fi Configuration (ZIP)</a>
+  <a class="button" onclick="downloadWiFi()">Download Wi-Fi Configuration</a>
 
   <p>Or scan this on your iPhone / Mac camera:</p>
-
   <a href="AllWiFi.mobileconfig">
     <img src="qr.png" alt="QR code to install Wi-Fi profile" class="qr">
   </a>
@@ -91,5 +90,18 @@
   </p>
 </div>
 
+<script>
+function downloadWiFi() {
+  const password = prompt("Enter IT password to download the Wi-Fi profile:");
+  // Replace 'YourITpassword123' with your real password
+  if (password === "admin2k22") {
+    window.location.href = "AllWiFi.mobileconfig";
+  } else {
+    alert("Incorrect password! Contact IT if you don’t have access.");
+  }
+}
+</script>
+
 </body>
 </html>
+
