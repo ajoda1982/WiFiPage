@@ -1,93 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connect to Maadi WiFi</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('us.png') center/cover no-repeat;
-  }
-
-  .container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px 30px;
-    border-radius: 16px;
-    max-width: 480px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
-  }
-
-  h1 {
-    font-size: 1.8rem;
-    color: #0066CC;
-    margin-bottom: 24px;
-  }
-
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  a.button {
-    padding: 14px 28px;
-    border-radius: 12px;
-    background: #0066CC;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s, transform 0.2s;
-  }
-
-  a.button:hover {
-    background: #0055AA;
-    transform: scale(1.03);
-  }
-
-  img.qr {
-    width: 220px;
-    max-width: 80%;
-    margin: 0 auto 24px;
-    border-radius: 16px;
-    border: 3px solid #0066CC;
-    display: block;
-  }
-
-  .contact {
-    font-size: 14px;
-    color: #555;
-  }
-
-  @media(max-width: 420px) {
-    .buttons a.button { width: 100%; text-align: center; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device‑width, initial-scale=1.0">
+  <title>Connect to Maadi Wi‑Fi</title>
+  <style>
+    body {
+      margin:0; padding:0; display:flex; justify-content:center; align-items:center;
+      min-height:100vh; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('us.png') center/cover no-repeat; background-size:cover;
+    }
+    .card {
+      background: rgba(255,255,255,0.95);
+      padding:40px 30px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      max-width:500px; width:90%; text-align:center;
+    }
+    h1 {
+      font-size:2rem; color:#0066CC; margin-bottom:20px;
+    }
+    .buttons {
+      display:flex; flex-direction:column; gap:14px; margin-bottom:24px;
+    }
+    a.button {
+      padding:14px 28px; border-radius:10px; background:#0066CC; color:#fff;
+      font-weight:600; text-decoration:none; font-size:1.1rem;
+      transition: background 0.3s, transform 0.2s;
+    }
+    a.button:hover {
+      background:#0055AA; transform:scale(1.03);
+    }
+    img.qr {
+      width:220px; max-width:80%; margin:0 auto 20px; border:3px solid #0066CC;
+      border-radius:12px; display:block;
+    }
+    .contact {
+      font-size:14px; color:#555; margin-top:12px;
+    }
+    @media(max-width:420px) {
+      .buttons { flex-direction:column; }
+      a.button { width:100%; }
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
-  <h1>Connect to Maadi WiFi</h1>
-
-  <div class="buttons">
-    <a href="AllWiFi.mobileconfig" class="button">Install Wi‑Fi Profile (iPhone/iPad)</a>
-    <a href="AllWiFi.zip" class="button">Download Wi‑Fi Configuration (ZIP for Mac)</a>
+  <div class="card">
+    <h1>Connect to Maadi Wi‑Fi</h1>
+    <div class="buttons">
+      <a href="AllWiFi.mobileconfig" class="button">Install Wi‑Fi Profile (iPhone/iPad)</a>
+      <a href="AllWiFi.zip" class="button">Download Wi‑Fi Configuration (ZIP for Mac)</a>
+    </div>
+    <img src="qr.png" alt="QR code to install Wi‑Fi profile" class="qr">
+    <div class="contact">For help contact: <a href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a></div>
   </div>
-
-  <img src="qr.png" alt="QR code to install Wi‑Fi profile" class="qr">
-
-  <div class="contact">
-    For help contact: <a href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a>
-  </div>
-</div>
-
 </body>
 </html>
