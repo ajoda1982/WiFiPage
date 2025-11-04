@@ -3,26 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connect to Maadi WiFi</title>
+<title>Connect to Maadi Wi-Fi</title>
 <style>
   :root {
-    --primary-color: #fbb034; /* star logo orange-yellow */
-    --primary-hover: #f5a623;
+    --primary-color: #C8102E; /* StARS red */
+    --primary-hover: #A50E26;
     --text-color: #222;
-    --bg-color: rgba(255, 255, 255, 0.97);
-    --shadow: rgba(0,0,0,0.15);
+    --bg-color: #FFFFFF;
+    --shadow: rgba(0, 0, 0, 0.1);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --primary-color: #fbb034;
-      --primary-hover: #f5a623;
-      --text-color: #f1f1f1;
-      --bg-color: rgba(20, 20, 20, 0.9);
-      --shadow: rgba(0,0,0,0.7);
-    }
-    body {
-      background-image: url('us-dark.png');
+      --primary-color: #FF4D4D;
+      --primary-hover: #FF6666;
+      --text-color: #EEE;
+      --bg-color: #111;
+      --shadow: rgba(0,0,0,0.6);
     }
   }
 
@@ -30,15 +27,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('us.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #fff;
+    transition: background-color 0.4s ease;
   }
 
   .container {
@@ -46,28 +40,35 @@
     padding: 40px 30px;
     border-radius: 15px;
     text-align: center;
-    max-width: 500px;
+    max-width: 480px;
     width: 90%;
-    box-shadow: 0 10px 25px var(--shadow);
+    box-shadow: 0 8px 20px var(--shadow);
+    border-top: 6px solid var(--primary-color);
   }
 
   h1 {
     color: var(--primary-color);
-    font-size: 2.2em;
+    font-size: 2em;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
   }
 
+  p {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
   a.button {
     display: inline-block;
-    margin: 20px 10px 10px;
-    padding: 15px 30px;
+    margin: 15px 10px;
+    padding: 14px 28px;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
-    transition: 0.3s;
+    transition: 0.3s ease;
   }
 
   a.button:hover {
@@ -82,10 +83,10 @@
     border-radius: 15px;
   }
 
-  p {
-    font-size: 16px;
+  .instructions {
+    font-size: 14px;
     color: var(--text-color);
-    line-height: 1.6;
+    margin-top: 15px;
   }
 </style>
 </head>
@@ -93,15 +94,24 @@
 
 <div class="container">
   <h1>Connect to Maadi Wi-Fi</h1>
+  <p>Tap the button to download and install the Wi-Fi configuration for your device.</p>
 
+  <!-- iPhone install -->
   <a href="AllWiFi.mobileconfig" class="button">Install Wi-Fi Profile</a>
+
+  <!-- ZIP download -->
   <a href="AllWiFi.zip" class="button">Download Wi-Fi Configuration (ZIP)</a>
 
   <p>Or scan this on your iPhone / Mac camera:</p>
 
+  <!-- QR code -->
   <a href="AllWiFi.mobileconfig">
     <img src="qr.png" alt="QR code to install Wi-Fi profile" class="qr">
   </a>
+
+  <p class="instructions">
+    © 2025 StARS – Secure Wi-Fi Access
+  </p>
 </div>
 
 </body>
