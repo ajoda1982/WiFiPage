@@ -3,121 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connect to Maadi WiFi</title>
+<title>Connect to Maadi Wi-Fi</title>
 <style>
-  :root {
-    --primary-color: #0066CC;
-    --primary-hover: #0055AA;
-    --text-color: #333;
-    --bg-color: rgba(255, 255, 255, 0.95);
-    --shadow: rgba(0,0,0,0.2);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --primary-color: #4DA3FF;
-      --primary-hover: #1E90FF;
-      --text-color: #EEE;
-      --bg-color: rgba(25, 25, 25, 0.95);
-      --shadow: rgba(0,0,0,0.6);
-    }
-    body {
-      background-image: url('us-dark.png');
-    }
-  }
-
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('us.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    transition: background-color 0.4s ease;
+    height: 100vh;
+    margin: 0;
   }
 
-  .container {
-    background-color: var(--bg-color);
+  .card {
+    background: white;
     padding: 40px 30px;
-    border-radius: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     text-align: center;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 10px 25px var(--shadow);
+    width: 95%;
+    max-width: 420px;
   }
 
   h1 {
-    color: var(--primary-color);
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #1565c0;
+    margin-bottom: 10px;
   }
 
   p {
-    font-size: 16px;
-    color: var(--text-color);
+    color: #444;
+    font-size: 15px;
     line-height: 1.6;
+    margin-bottom: 20px;
   }
 
-  a.button {
-    display: inline-block;
-    margin: 20px 10px 10px;
-    padding: 15px 30px;
-    background-color: var(--primary-color);
+  .button {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    background: #1976d2;
     color: white;
+    font-weight: 600;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s;
+    margin-bottom: 15px;
+    transition: background 0.3s, transform 0.2s;
   }
 
-  a.button:hover {
-    background-color: var(--primary-hover);
+  .button:hover {
+    background: #0d47a1;
+    transform: translateY(-2px);
   }
 
-  img.qr {
-    width: 220px;
-    max-width: 80%;
-    margin: 20px auto;
-    border: 3px solid var(--primary-color);
-    border-radius: 15px;
+  .qr {
+    width: 180px;
+    border-radius: 12px;
+    border: 3px solid #1976d2;
+    margin: 10px 0 20px;
   }
 
-  .instructions {
-    font-size: 14px;
-    color: var(--text-color);
-    margin-top: 20px;
+  .footer {
+    font-size: 13px;
+    color: #666;
+    margin-top: 15px;
+  }
+
+  .footer a {
+    color: #1565c0;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: linear-gradient(135deg, #0d1117, #1e3a8a);
+    }
+    .card {
+      background: #1f2937;
+      color: #e5e7eb;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+    .button {
+      background: #2563eb;
+    }
+    .button:hover {
+      background: #1d4ed8;
+    }
+    .footer a {
+      color: #60a5fa;
+    }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card">
   <h1>Connect to Maadi Wi-Fi</h1>
-  <p>Tap the button to download and install the Wi-Fi configuration for your device.</p>
+  <p>Tap the button below to download and install the Wi-Fi configuration for your device.</p>
 
-  <!-- iPhone install -->
   <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.mobileconfig" class="button">Install Wi-Fi Profile</a>
+  <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.zip" class="button">Download Wi-Fi Configuration (ZIP)</a>
 
-  <!-- ZIP download -->
-  <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.zip" class="button">Download Wi-Fi Configuration </a>
-
-  <p>Or scan this on your iPhone / Mac camera:</p>
-
-  <!-- QR code -->
+  <p>Or scan this QR code:</p>
   <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.mobileconfig">
     <img src="qr.png" alt="QR code to install Wi-Fi profile" class="qr">
   </a>
 
-  <p class="instructions">
+  <div class="footer">
     For help contact: <a href="mailto:ajoda@stars-egypt.org">ajoda@stars-egypt.org</a>
-  </p>
+  </div>
 </div>
 
 </body>
 </html>
-
