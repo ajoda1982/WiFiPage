@@ -6,44 +6,51 @@
 <title>Connect to Maadi Wi-Fi</title>
 <style>
   :root {
-    --primary-color: #C8102E; /* StARS red */
-    --primary-hover: #A10C24; /* darker red */
+    --stars-red: #C8102E;
+    --stars-red-dark: #A10C24;
     --text-color: #333;
-    --bg-color: #ffffff;
-    --shadow: rgba(0,0,0,0.2);
+    --card-bg: #ffffff;
+    --glow: rgba(200, 16, 46, 0.5);
   }
 
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #c8102e 0%, #ffb3b3 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
   }
 
   .container {
-    background-color: var(--bg-color);
-    border: 5px solid var(--primary-color); /* full red frame */
+    background-color: var(--card-bg);
+    border: 5px solid var(--stars-red);
     padding: 40px 30px;
-    border-radius: 20px;
+    border-radius: 25px;
     text-align: center;
     max-width: 500px;
     width: 90%;
-    box-shadow: 0 10px 25px var(--shadow);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
   }
 
   h1 {
-    color: var(--primary-color);
-    font-size: 2em;
+    color: var(--stars-red);
+    font-size: 2.2em;
     margin-bottom: 20px;
+    font-weight: bold;
   }
 
   p {
-    font-size: 16px;
     color: var(--text-color);
+    font-size: 16px;
     line-height: 1.6;
   }
 
@@ -51,24 +58,28 @@
     display: inline-block;
     margin: 20px 10px 10px;
     padding: 15px 30px;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--stars-red);
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 50px;
+    box-shadow: 0 0 15px var(--glow);
     transition: 0.3s;
   }
 
   a.button:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--stars-red-dark);
+    box-shadow: 0 0 25px var(--glow);
+    transform: scale(1.05);
   }
 
   img.qr {
     width: 220px;
     max-width: 80%;
     margin: 20px auto;
-    border: 3px solid var(--primary-color);
+    border: 3px solid var(--stars-red);
     border-radius: 15px;
+    box-shadow: 0 0 15px var(--glow);
   }
 
   .instructions {
