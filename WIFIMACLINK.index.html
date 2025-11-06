@@ -35,7 +35,7 @@ body {
 h1 {
   color: var(--stars-red);
   font-size: 1.8em;
-  margin-bottom: 15px;
+  margin: 15px 0 15px;
   font-weight: bold;
 }
 p {
@@ -68,18 +68,26 @@ img.qr {
   border-radius: 10px;
   box-shadow: 0 0 8px var(--glow);
 }
+img.logo {
+  width: 60px;
+  margin-bottom: 15px;
+}
 @media (max-width: 480px) {
   .container { padding: 20px 18px; }
   h1 { font-size: 1.5em; }
   p { font-size: 14px; }
   a.button { padding: 10px 20px; font-size: 14px; }
   img.qr { width: 180px; }
+  img.logo { width: 50px; }
 }
 </style>
 </head>
 <body>
 
 <div class="container">
+  <!-- Star logo -->
+  <img src="https://ajoda1982.github.io/WiFiPage/star.png" alt="Star Logo" class="logo">
+
   <h1>Connect to Maadi Wi-Fi</h1>
   <p>Tap the button to download and install the Wi-Fi configuration for your device.</p>
   
@@ -90,23 +98,7 @@ img.qr {
   <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.mobileconfig">
     <img src="https://ajoda1982.github.io/WiFiPage/qr.png" alt="QR code" class="qr">
   </a>
-
-  <p style="font-size:13px; color:#555; margin-top:10px;">
-    Fallback: SSID: <strong>MaadiWiFi</strong> | Password: <strong>Stars2025</strong><br>
-    For help contact: 
-    <a href="#" id="email-link" style="color: var(--stars-red); text-decoration: underline; font-weight: bold;">Email Support</a>
-  </p>
 </div>
-
-<script>
-// Encode email to hide from bots
-const user = "ajoda";
-const domain = "stars-egypt.org";
-const email = user + "@" + domain;
-const link = document.getElementById("email-link");
-link.href = "mailto:" + email;
-link.textContent = email; // shows email to user
-</script>
 
 </body>
 </html>
