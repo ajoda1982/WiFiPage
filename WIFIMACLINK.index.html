@@ -70,29 +70,18 @@
   img.qr {
     width: 200px;
     max-width: 80%;
-    margin: 20px auto 10px;
+    margin: 15px auto;
     border: 2px solid var(--stars-red);
     border-radius: 10px;
     box-shadow: 0 0 8px var(--glow);
   }
 
   @media (max-width: 480px) {
-    .container {
-      padding: 20px 18px;
-    }
-    h1 {
-      font-size: 1.5em;
-    }
-    p {
-      font-size: 14px;
-    }
-    a.button {
-      padding: 10px 20px;
-      font-size: 14px;
-    }
-    img.qr {
-      width: 180px;
-    }
+    .container { padding: 20px 18px; }
+    h1 { font-size: 1.5em; }
+    p { font-size: 14px; }
+    a.button { padding: 10px 20px; font-size: 14px; }
+    img.qr { width: 180px; }
   }
 </style>
 </head>
@@ -100,36 +89,28 @@
 
 <div class="container">
   <h1>Connect to Maadi Wi-Fi</h1>
-  <p>Tap the button below to automatically install the right Wi-Fi setup for your device.</p>
+  <p>Tap the button to download and install the Wi-Fi configuration for your device.</p>
 
-  <a href="#" class="button" id="autoDownload">Download Wi-Fi Configuration</a>
+  <a href="AllWiFi.mobileconfig" class="button">Install for iPhone / Mac</a><br>
+  <a href="https://ajoda1982.github.io/WiFiPage/allmaadi%20wifi%20xml.zip" class="button">Install for Android</a><br>
+  <a href="https://ajoda1982.github.io/WiFiPage/allmaadi%20wifi%20xml.zip" class="button">Install for Windows</a>
 
-  <p>Or scan this on your phone camera:</p>
-  <a href="#" id="qrLink">
-    <img src="qr.png" alt="QR code to install Wi-Fi profile" class="qr">
-  </a>
+  <p>Or scan a QR code for your device:</p>
 
-  <p style="font-size: 13px; color:#666; margin-top: 10px;">For help contact: ajoda@stars-egypt.org</p>
+  <div>
+    <p><strong>iPhone / Mac:</strong></p>
+    <a href="AllWiFi.mobileconfig">
+      <img src="qr.png" alt="QR code for iPhone and Mac" class="qr">
+    </a>
+  </div>
+
+  <div>
+    <p><strong>Android & Windows:</strong></p>
+    <img src="qr_android.png" alt="QR code for Android" class="qr">
+  </div>
+
+  <p style="font-size:13px; color:#555;">For help contact: ajoda@stars-egypt.org</p>
 </div>
-
-<script>
-  function getDeviceFile() {
-    const ua = navigator.userAgent.toLowerCase();
-    if (/iphone|ipad|macintosh/.test(ua)) {
-      return "AllWiFi.mobileconfig";
-    } else if (/android|windows/.test(ua)) {
-      return "allmaadi wifi xml.zip";
-    } else {
-      return "AllWiFi.mobileconfig"; // default
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const link = getDeviceFile();
-    document.getElementById("autoDownload").href = link;
-    document.getElementById("qrLink").href = link;
-  });
-</script>
 
 </body>
 </html>
