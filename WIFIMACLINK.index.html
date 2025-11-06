@@ -5,84 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Connect to Maadi Wi-Fi</title>
 <style>
-  :root {
-    --stars-red: #C8102E;
-    --stars-red-dark: #A10C24;
-    --text-color: #333;
-    --card-bg: #ffffff;
-    --glow: rgba(200, 16, 46, 0.4);
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container {
-    background-color: var(--card-bg);
-    border: 3px solid var(--stars-red);
-    padding: 30px 25px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 440px;
-    width: 90%;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  }
-
-  h1 {
-    color: var(--stars-red);
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
-
-  p {
-    color: var(--text-color);
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  a.button {
-    display: inline-block;
-    margin: 10px 8px;
-    padding: 12px 22px;
-    background-color: var(--stars-red);
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    font-size: 15px;
-    box-shadow: 0 0 8px var(--glow);
-    transition: 0.3s;
-  }
-
-  a.button:hover {
-    background-color: var(--stars-red-dark);
-    transform: scale(1.04);
-  }
-
-  img.qr {
-    width: 200px;
-    max-width: 80%;
-    margin: 15px auto;
-    border: 2px solid var(--stars-red);
-    border-radius: 10px;
-    box-shadow: 0 0 8px var(--glow);
-  }
-
-  @media (max-width: 480px) {
-    .container { padding: 20px 18px; }
-    h1 { font-size: 1.5em; }
-    p { font-size: 14px; }
-    a.button { padding: 10px 20px; font-size: 14px; }
-    img.qr { width: 180px; }
-  }
+:root {
+  --stars-red: #C8102E;
+  --stars-red-dark: #A10C24;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --glow: rgba(200, 16, 46, 0.4);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: var(--card-bg);
+  border: 3px solid var(--stars-red);
+  padding: 30px 25px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+h1 {
+  color: var(--stars-red);
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+p {
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.5;
+}
+a.button {
+  display: inline-block;
+  margin: 15px 8px 8px;
+  padding: 12px 22px;
+  background-color: var(--stars-red);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  font-size: 15px;
+  box-shadow: 0 0 8px var(--glow);
+  transition: 0.3s;
+}
+a.button:hover {
+  background-color: var(--stars-red-dark);
+  transform: scale(1.04);
+}
+img.qr {
+  width: 200px;
+  max-width: 80%;
+  margin: 20px auto 10px;
+  border: 2px solid var(--stars-red);
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--glow);
+}
+@media (max-width: 480px) {
+  .container { padding: 20px 18px; }
+  h1 { font-size: 1.5em; }
+  p { font-size: 14px; }
+  a.button { padding: 10px 20px; font-size: 14px; }
+  img.qr { width: 180px; }
+}
 </style>
 </head>
 <body>
@@ -90,27 +82,31 @@
 <div class="container">
   <h1>Connect to Maadi Wi-Fi</h1>
   <p>Tap the button to download and install the Wi-Fi configuration for your device.</p>
+  
+  <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.mobileconfig" class="button">Install Wi-Fi Profile</a>
+  <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.zip" class="button">Download Wi-Fi Configuration (ZIP)</a>
+  
+  <p>Or scan this on your iPhone / Mac camera:</p>
+  <a href="https://ajoda1982.github.io/WiFiPage/AllWiFi.mobileconfig">
+    <img src="https://ajoda1982.github.io/WiFiPage/qr.png" alt="QR code" class="qr">
+  </a>
 
-  <a href="AllWiFi.mobileconfig" class="button">Install for iPhone / Mac</a><br>
-  <a href="https://ajoda1982.github.io/WiFiPage/allmaadi%20wifi%20xml.zip" class="button">Install for Android</a><br>
-  <a href="https://ajoda1982.github.io/WiFiPage/allmaadi%20wifi%20xml.zip" class="button">Install for Windows</a>
-
-  <p>Or scan a QR code for your device:</p>
-
-  <div>
-    <p><strong>iPhone / Mac:</strong></p>
-    <a href="AllWiFi.mobileconfig">
-      <img src="qr.png" alt="QR code for iPhone and Mac" class="qr">
-    </a>
-  </div>
-
-  <div>
-    <p><strong>Android & Windows:</strong></p>
-    <img src="qr_android.png" alt="QR code for Android" class="qr">
-  </div>
-
-  <p style="font-size:13px; color:#555;">For help contact: ajoda@stars-egypt.org</p>
+  <p style="font-size:13px; color:#555; margin-top:10px;">
+    Fallback: SSID: <strong>MaadiWiFi</strong> | Password: <strong>Stars2025</strong><br>
+    For help contact: 
+    <a href="#" id="email-link" style="color: var(--stars-red); text-decoration: underline; font-weight: bold;">Email Support</a>
+  </p>
 </div>
+
+<script>
+// Encode email to hide from bots
+const user = "ajoda";
+const domain = "stars-egypt.org";
+const email = user + "@" + domain;
+const link = document.getElementById("email-link");
+link.href = "mailto:" + email;
+link.textContent = email; // shows email to user
+</script>
 
 </body>
 </html>
