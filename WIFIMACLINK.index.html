@@ -12,6 +12,7 @@
     --card-bg: #ffffff;
     --glow: rgba(200, 16, 46, 0.4);
   }
+
   body {
     margin: 0;
     padding: 0;
@@ -22,6 +23,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .container {
     background-color: var(--card-bg);
     border: 3px solid var(--stars-red);
@@ -32,20 +34,23 @@
     width: 90%;
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
   }
+
   h1 {
     color: var(--stars-red);
     font-size: 1.8em;
     margin-bottom: 15px;
     font-weight: bold;
   }
+
   p {
     color: var(--text-color);
     font-size: 15px;
     line-height: 1.5;
   }
+
   a.button {
     display: inline-block;
-    margin: 10px 6px;
+    margin: 10px 8px;
     padding: 12px 22px;
     background-color: var(--stars-red);
     color: #fff;
@@ -56,10 +61,12 @@
     box-shadow: 0 0 8px var(--glow);
     transition: 0.3s;
   }
+
   a.button:hover {
     background-color: var(--stars-red-dark);
     transform: scale(1.04);
   }
+
   img.qr {
     width: 200px;
     max-width: 80%;
@@ -68,6 +75,7 @@
     border-radius: 10px;
     box-shadow: 0 0 8px var(--glow);
   }
+
   @media (max-width: 480px) {
     .container {
       padding: 20px 18px;
@@ -92,22 +100,36 @@
 
 <div class="container">
   <h1>Connect to Maadi Wi-Fi</h1>
-  <p>Tap your device below to install or download the correct Wi-Fi configuration.</p>
+  <p>Tap the button below to automatically install the right Wi-Fi setup for your device.</p>
 
-  <!-- iOS / macOS -->
-  <a href="AllWiFi.mobileconfig" class="button">iPhone / Mac</a>
+  <a href="#" class="button" id="autoDownload">Download Wi-Fi Configuration</a>
 
-  <!-- Windows -->
-  <a href="allmaadi wifi xml.zip" class="button">Windows</a>
-
-  <!-- Android -->
-  <a href="AndroidWiFi.zip" class="button">Android</a>
-
-  <p>Or scan this QR code on your iPhone or Mac camera:</p>
-  <a href="AllWiFi.mobileconfig">
+  <p>Or scan this on your phone camera:</p>
+  <a href="#" id="qrLink">
     <img src="qr.png" alt="QR code to install Wi-Fi profile" class="qr">
   </a>
+
+  <p style="font-size: 13px; color:#666; margin-top: 10px;">For help contact: ajoda@stars-egypt.org</p>
 </div>
+
+<script>
+  function getDeviceFile() {
+    const ua = navigator.userAgent.toLowerCase();
+    if (/iphone|ipad|macintosh/.test(ua)) {
+      return "AllWiFi.mobileconfig";
+    } else if (/android|windows/.test(ua)) {
+      return "allmaadi wifi xml.zip";
+    } else {
+      return "AllWiFi.mobileconfig"; // default
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const link = getDeviceFile();
+    document.getElementById("autoDownload").href = link;
+    document.getElementById("qrLink").href = link;
+  });
+</script>
 
 </body>
 </html>
